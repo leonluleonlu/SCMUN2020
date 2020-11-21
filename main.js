@@ -1066,6 +1066,10 @@ function animateSCMUN() {
 
     }, 7200);
 
+    setTimeout(function(){
+        console.log("hint: there's another easter egg somewhere else")
+    }, 7201);
+
 
 }
 
