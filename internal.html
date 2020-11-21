@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Internal Portal - SCMUN VIII</title>
+  <!-- Varification -->
+  <script>
+      var url = window.location.href;
+
+      function SHA256(s) {
+
+
+          var chrsz = 8;
+
+
+          var hexcase = 0;
+
+
+          function safe_add(x, y) {
+
+
+              var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+
+
+              var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+
+
+              return (msw << 16) | (lsw & 0xFFFF);
+
+
+          }
+
+
+          function S(X, n) {
+              return (X >>> n) | (X << (32 - n));
+          }
+
+
+          function R(X, n) {
+              return (X >>> n);
+          }
+
+
+          function Ch(x, y, z) {
+              return ((x & y) ^ ((~x) & z));
+          }
+
+
+          function Maj(x, y, z) {
+              return ((x & y) ^ (x & z) ^ (y & z));
+          }
+
+
+          function Sigma0256(x) {
+              return (S(x, 2) ^ S(x, 13) ^ S(x, 22));
+          }
+
+
+          function Sigma1256(x) {
+              return (S(x, 6) ^ S(x, 11) ^ S(x, 25));
+          }
+
+
+          function Gamma0256(x) {
+              return (S(x, 7) ^ S(x, 18) ^ R(x, 3));
+          }
+
+
+          function Gamma1256(x) {
+              return (S(x, 17) ^ S(x, 19) ^ R(x, 10));
+          }
+
+
+          function core_sha256(m, l) {
+
+
+              var K = new Array(0x428A2F98, 0x71374491, 0xB5C0FBCF, 0xE9B5DBA5, 0x3956C25B, 0x59F111F1, 0x923F82A4, 0xAB1C5ED5, 0xD807AA98, 0x12835B01, 0x243185BE, 0x550C7DC3, 0x72BE5D74, 0x80DEB1FE, 0x9BDC06A7, 0xC19BF174, 0xE49B69C1, 0xEFBE4786, 0xFC19DC6, 0x240CA1CC, 0x2DE92C6F, 0x4A7484AA, 0x5CB0A9DC, 0x76F988DA, 0x983E5152, 0xA831C66D, 0xB00327C8, 0xBF597FC7, 0xC6E00BF3, 0xD5A79147, 0x6CA6351, 0x14292967, 0x27B70A85, 0x2E1B2138, 0x4D2C6DFC, 0x53380D13, 0x650A7354, 0x766A0ABB, 0x81C2C92E, 0x92722C85, 0xA2BFE8A1, 0xA81A664B, 0xC24B8B70, 0xC76C51A3, 0xD192E819, 0xD6990624, 0xF40E3585, 0x106AA070, 0x19A4C116, 0x1E376C08, 0x2748774C, 0x34B0BCB5, 0x391C0CB3, 0x4ED8AA4A, 0x5B9CCA4F, 0x682E6FF3, 0x748F82EE, 0x78A5636F, 0x84C87814, 0x8CC70208, 0x90BEFFFA, 0xA4506CEB, 0xBEF9A3F7, 0xC67178F2);
+
+
+              var HASH = new Array(0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A, 0x510E527F, 0x9B05688C, 0x1F83D9AB, 0x5BE0CD19);
+
+
+              var W = new Array(64);
+
+
+              var a, b, c, d, e, f, g, h, i, j;
+
+
+              var T1, T2;
+
+
+              m[l >> 5] |= 0x80 << (24 - l % 32);
+
+
+              m[((l + 64 >> 9) << 4) + 15] = l;
+
+
+              for (var i = 0; i < m.length; i += 16) {
+
+
+                  a = HASH[0];
+
+
+                  b = HASH[1];
+
+
+                  c = HASH[2];
+
+
+                  d = HASH[3];
+
+
+                  e = HASH[4];
+
+
+                  f = HASH[5];
+
+
+                  g = HASH[6];
+
+
+                  h = HASH[7];
+
+
+                  for (var j = 0; j < 64; j++) {
+
+
+                      if (j < 16) W[j] = m[j + i];
+
+
+                      else W[j] = safe_add(safe_add(safe_add(Gamma1256(W[j - 2]), W[j - 7]), Gamma0256(W[j - 15])), W[j - 16]);
+
+
+                      T1 = safe_add(safe_add(safe_add(safe_add(h, Sigma1256(e)), Ch(e, f, g)), K[j]), W[j]);
+
+
+                      T2 = safe_add(Sigma0256(a), Maj(a, b, c));
+
+
+                      h = g;
+
+
+                      g = f;
+
+
+                      f = e;
+
+
+                      e = safe_add(d, T1);
+
+
+                      d = c;
+
+
+                      c = b;
+
+
+                      b = a;
+
+
+                      a = safe_add(T1, T2);
+
+
+                  }
+
+
+                  HASH[0] = safe_add(a, HASH[0]);
+
+
+                  HASH[1] = safe_add(b, HASH[1]);
+
+
+                  HASH[2] = safe_add(c, HASH[2]);
+
+
+                  HASH[3] = safe_add(d, HASH[3]);
+
+
+                  HASH[4] = safe_add(e, HASH[4]);
+
+
+                  HASH[5] = safe_add(f, HASH[5]);
+
+
+                  HASH[6] = safe_add(g, HASH[6]);
+
+
+                  HASH[7] = safe_add(h, HASH[7]);
+
+
+              }
+
+
+              return HASH;
+
+
+          }
+
+
+          function str2binb(str) {
+
+
+              var bin = Array();
+
+
+              var mask = (1 << chrsz) - 1;
+
+
+              for (var i = 0; i < str.length * chrsz; i += chrsz) {
+
+
+                  bin[i >> 5] |= (str.charCodeAt(i / chrsz) & mask) << (24 - i % 32);
+
+
+              }
+
+
+              return bin;
+
+
+          }
+
+
+          function Utf8Encode(string) {
+
+
+              string = string.replace(/\r\n/g, "\n");
+
+
+              var utftext = "";
+
+
+              for (var n = 0; n < string.length; n++) {
+
+
+                  var c = string.charCodeAt(n);
+
+
+                  if (c < 128) {
+
+
+                      utftext += String.fromCharCode(c);
+
+
+                  } else if ((c > 127) && (c < 2048)) {
+
+
+                      utftext += String.fromCharCode((c >> 6) | 192);
+
+
+                      utftext += String.fromCharCode((c & 63) | 128);
+
+
+                  } else {
+
+
+                      utftext += String.fromCharCode((c >> 12) | 224);
+
+
+                      utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+
+
+                      utftext += String.fromCharCode((c & 63) | 128);
+
+
+                  }
+
+
+              }
+
+
+              return utftext;
+
+
+          }
+
+
+          function binb2hex(binarray) {
+
+
+              var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+
+
+              var str = "";
+
+
+              for (var i = 0; i < binarray.length * 4; i++) {
+
+
+                  str += hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8 + 4)) & 0xF) +
+
+
+                      hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8)) & 0xF);
+
+
+              }
+
+
+              return str;
+
+
+          }
+
+
+          s = Utf8Encode(s);
+
+
+          return binb2hex(core_sha256(str2binb(s), s.length * chrsz));
+
+
+      }
+
+      if (SHA256(url) !== "596e6e28b480dd9d8e76c83fad6420bbf4ee83298d687f5748cd4766c9344f83") {
+          window.location.replace("index.html");
+      }
+
+  </script>
+  <!-- Tab icon -->
+  <link rel="icon" href="assets/icons/favicon.ico">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="style.css" rel="stylesheet">
+
+  <!--Custom CSS-->
+  <style>
+    /*  WOW after load  */
+    .wow {
+      visibility: hidden;
+    }
+    /*  Navbar  */
+    .navbar {
+      background: rgba(6, 39, 82, 0.9) !important;
+    }
+    #current {
+      background-color: #e0e0e0;
+    }
+
+    /*  Responsive display  */
+    @media (min-width: 991px) {
+      .display-4 {
+        font-size: 3.2rem;
+      }
+    }
+    @media (max-width: 991px) {
+      .display-4 {
+        font-size: 3.0rem;
+      }
+    }
+    @media (max-width: 767px) {
+      .display-4 {
+        font-size: 2.0rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .display-4 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /*  Scrollspy  */
+    #mdb-scrollspy-ex .nav-item {
+      width: 100%;
+    }
+
+    #mdb-scrollspy-ex a {
+      font-size: .8rem;
+      font-weight: 400;
+      line-height: 1.1rem;
+      padding: 0 5px;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      color: black;
+    }
+
+    #mdb-scrollspy-ex li .active {
+      font-weight: 600;
+    }
+
+    .mdb-scrollspy-ex-example {
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<!------------------------>
+<!---------Header--------->
+<!------------------------>
+<header>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container-fluid px-xl-5 px-lg-3">
+      <!--Navbar structure-->
+      <a class="navbar-brand" href="http://scmun.net/">
+        <img src="assets/icons/scmunlogo.svg" id="logo" class="scmunlogo d-inline-block align-top"
+             alt="[logo]" style="height: 30px; padding: 0;">
+      </a>
+      <a href="http://scmun.net/" class="navbar-brand">
+        <strong>SCMUN VIII</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+              aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--/Navbar structure-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <!--LHS-->
+        <ul class="navbar-nav mr-auto">
+          <!--Home Button-->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <!--Registration-->
+          <li class="nav-item">
+            <a class="nav-link" href="registration.html">Register <span class="sr-only">(current)</span></a>
+          </li>
+          <!--Conference-->
+          <li class="nav-item dropdown smooth-scroll">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Conference
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#home" onclick="new WOW().init();">Home</a>
+              <a class="dropdown-item" href="#about">About</a>
+              <a class="dropdown-item" href="#ncpaDirectorMessage">NCPA Director's Message</a>
+              <a class="dropdown-item" href="#vision">Our Vision</a>
+              <a class="dropdown-item" href="#munDirectorMessage">MUN Director's Message</a>
+              <a class="dropdown-item" href="#committeesAvailable">Committees Available</a>
+              <a class="dropdown-item" href="#registrationProcess">Registration Process</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="history.html">History</a>
+              <a class="dropdown-item" href="logisticArrangements.html">Logistic Arrangements</a>
+              <a class="dropdown-item" href="schedule.html">Schedule</a>
+              <a class="dropdown-item" href="venue.html">Venue</a>
+              <a class="dropdown-item" href="awards.html">Awards Available</a>
+            </div>
+          </li>
+          <!--Committees-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Committees
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="UNSC.html">United Nation Security Council (UNSC)</a>
+              <a class="dropdown-item" href="DISEC.html">General Assembly 1 -- Disarmament & International Security (DISEC)</a>
+              <a class="dropdown-item" href="WHO.html">World Health Organisation (WHO)</a>
+              <a class="dropdown-item" href="ECOSOC.html">Economic and Social Committee (ECOSOC)</a>
+              <a class="dropdown-item" href="SOCHUM.html">General Assembly 3 -- Social, Cultural, and Humanitarian (SOCHUM)</a>
+              <a class="dropdown-item" href="UNICEF.html">United Nations Children's Fund (UNICEF)</a>
+            </div>
+          </li>
+          <!--Team-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              SCMUN Team
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="managers.html">Managers</a>
+              <a class="dropdown-item" href="officers.html">Officers</a>
+            </div>
+          </li>
+          <!--Resources-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Resources
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="procedures.html">Rules and Procedures</a>
+              <a class="dropdown-item" href="contact.html">Contact</a>
+            </div>
+          </li>
+          <!--Gallery-->
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery<span class="sr-only"></span></a>
+          </li>
+        </ul>
+        <!--/LHS-->
+
+        <!--RHS-->
+        <ul class="navbar-nav ml-auto">
+          <!--Internal Portal-->
+          <li class="nav-item active">
+
+            <a id="navbar-static-login" class="nav-link font-weight-light font-weight-light" data-toggle="modal" data-target="#navbarLogin">Internal Portal
+            </a>
+
+          </li>
+        </ul>
+        <!--/RHS-->
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<!-------------------------------->
+<!----------Page Content---------->
+<!-------------------------------->
+<main class="pt-5 grey lighten-5">
+  <!--Intro-->
+  <div class="container-fluid mt-2 mt-lg-3 mt-xl-4 white">
+    <div class="container pt-3">
+      <section class="section pt-2 pb-3">
+
+        <!--Heading-->
+        <h1 class="display-4 text-center text-uppercase font-weight-bold mt-3 mt-sm-4 mt-lg-5 mb-2 mb-sm-3 mb-md-5 wow fadeInDown"
+            data-wow-delay="0.2s">SCMUN VIII Internal Portal</h1>
+
+<!--        <h1 class="h1-responsive text-left mt-5 font-weight-bolder wow fadeInDown">Delegate Accommodation and Transportation</h1>-->
+
+        <!--Content-->
+        <p class="text-left wow fadeIn text-center" data-wow-delay="0.4s">This page provides quick access to resources such as internal documents.
+        </p>
+
+      </section>
+    </div>
+  </div>
+
+  <!--Content-->
+  <div class="container-fluid mt-2 mt-lg-3 mt-xl-4 grey lighten-3">
+    <div class="container pt-3">
+      <section class="section pt-2 pb-5">
+
+        <!--Heading-->
+
+<!--        <h1 class="h1-responsive text-left mt-5 font-weight-bolder wow fadeInDown">Hotel Recommendation</h1>-->
+
+        <!--Content-->
+
+        <!-- Accordion -->
+        <div class="mt-4 mb-2 accordion md-accordion wow fadeInDown" id="hotelAccordion" role="tablist" aria-multiselectable="true">
+
+          <!-- #1 -->
+          <div class="card">
+            <div class="card-header" role="tab" id="headingTwo1">
+              <a class="collapsed" data-toggle="collapse" data-parent="#hotelAccordion" href="#collapseTwo1"
+                 aria-expanded="false" aria-controls="collapseTwo1">
+                <h5 class="mb-0">
+                  For Chairs<i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+
+            <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
+                 data-parent="#hotelAccordion">
+
+              <!--Content inside-->
+              <div class="card-body px-lg-5 px-4">
+                <h2 class="black-text h2-responsive mb-2">Uploading Committee Documents</h2>
+                <p class="black-text font-weight-bolder mb-1">To promote sustainabililty by saving papers, you can upload your committee's working papers, draft resolutions, as well as final resolution onto SCMUN's website by emailing the pdf file to <strong class="">2220056@ncpachina.org</strong> with the following naming scheme:</p>
+                <samp class="font-weight-bold indigo-text">COMMITTEE_topicNumber_documentType_documentNumber.pdf</samp>
+                <p class="black-text font-weight-bolder mt-2 mb-1">For example:</p>
+                <samp class="font-weight-bold indigo-text">UNSC_topic1_draftResolution_1.1.pdf</samp>
+                <p class="black-text font-weight-bolder mt-2 mb-1">The upload process can take some time, once the file is uploaded, you will find it on the corresponding committee page.</p>
+
+                <h2 class="black-text h2-responsive mb-2">SCMUN VIII Chair Guide</h2>
+                <p class="black-text font-weight-bolder mb-1">This document includes our expectation to the chairs, all the rules for SCMUN, sample chair statement, sample resolution, and chair language guide, as well as topics assigned to each committee.</p>
+                <p class=""><a href="assets/documents/SCMUN Chair Guide.pdf">
+                  <i class="fas fa-file-pdf m-2 fa-8x red-text"></i>
+                </a></p>
+
+                <h2 class="black-text h2-responsive mb-2 mt-4">Shared Statistics</h2>
+
+
+              </div>
+            </div>
+          </div>
+
+          <!-- #2 -->
+          <div class="card">
+            <div class="card-header" role="tab" id="headingTwo2">
+              <a class="collapsed" data-toggle="collapse" data-parent="#hotelAccordion" href="#collapseTwo21"
+                 aria-expanded="false" aria-controls="collapseTwo21">
+                <h5 class="mb-0">
+                  For Promotion Department<i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+
+            <div id="collapseTwo21" class="collapse" role="tabpanel" aria-labelledby="headingTwo21"
+                 data-parent="#hotelAccordion">
+
+              <!--Content inside-->
+              <div class="card-body px-lg-5 px-4">
+                <h2 class="black-text h2-responsive mb-2">Press Standardisation</h2>
+                <p class="black-text font-weight-bolder mb-1">This document is written to establish a standardisation scheme designed to put SCMUN designs, symbols and products to a uniform manner.</p>
+                <p class=""><a href="assets/documents/SCMUN Standardisation.docx">
+                  <i class="fas fa-file-word m-2 fa-8x indigo-text"></i>
+                </a></p>
+
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- #3 -->
+          <div class="card">
+            <div class="card-header" role="tab" id="headingThree31">
+              <a class="collapsed" data-toggle="collapse" data-parent="#hotelAccordion" href="#collapseThree31"
+                 aria-expanded="false" aria-controls="collapseThree31">
+                <h5 class="mb-0">
+                  For Admins<i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+
+            <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+                 data-parent="#hotelAccordion">
+
+              <!--Content inside-->
+              <div class="card-body px-lg-5 px-4">
+
+              </div>
+            </div>
+          </div>
+
+          <!-- #4 -->
+          <div class="card">
+            <div class="card-header" role="tab" id="headingThree41">
+              <a class="collapsed" data-toggle="collapse" data-parent="#hotelAccordion" href="#collapseThree41"
+                 aria-expanded="false" aria-controls="collapseThree41">
+                <h5 class="mb-0">
+                  For SCMUN Website<i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+
+            <div id="collapseThree41" class="collapse" role="tabpanel" aria-labelledby="headingThree41"
+                 data-parent="#hotelAccordion">
+
+              <!--Content inside-->
+              <div class="card-body px-lg-5 px-4">
+                <h2 class="black-text h2-responsive mb-2">Beta Webpage Preview</h2>
+                <p class="black-text font-weight-bolder mb-1">The following links allow you to preview webpages that are not yet published on the SCMUN VIII website.</p>
+                <ul>
+                  <li><a href="UNSCbeta.html">UNSCbeta.html</a></li>
+                  <li><a href="DISECbeta.html">DISECbeta.html</a></li>
+                  <li><a href="WHObeta.html">WHObeta.html</a></li>
+                  <li><a href="ECOSOCbeta.html">ECOSOCbeta.html</a></li>
+                  <li><a href="SOCHUMbeta.html">SOCHUMbeta.html</a></li>
+                  <li><a href="UNICEFbeta.html">UNICEFbeta.html</a></li>
+                  <li><a href="gallerybeta.html">gallerybeta.html</a></li>
+                </ul>
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+
+</main>
+
+<!-------------------------->
+<!----------Footer---------->
+<!-------------------------->
+<footer class="page-footer font-small unique-color-dark">
+  <!--Footer top-->
+  <div class="light-blue darken-3">
+    <div class="container">
+
+      <div class="row pb-4 pt-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-8">
+          <h6 class="mb-0">SCMUN on social networks:</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-4">
+          <h6 class="text-right mb-0">
+            <!-- Facebook -->
+            <a class="fb-ic" href="https://www.facebook.com/ncpascmun/">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic" href="https://www.instagram.com/ncpascmun/">
+              <i class="fab fa-instagram white-text mr-2"> </i>
+            </a>
+          </h6>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!--Footer bottom-->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!--Grid column 1-->
+      <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mb-4">
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">About Us</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <div class="mx-auto" style="max-width: 400px;">
+          <a href="http://scmun.net/">
+            <img src="assets/icons/scmunlogotext.svg" alt="SCMUN logo with text">
+          </a>
+        </div>
+        <h6 class="text-uppercase font-weight-bolder mb-3 mt-3">Hosted By
+          <a href="https://www.ncpachina.org/en/">
+            Nansha College Preparatory Academy
+          </a>
+        </h6>
+        <div class="mx-auto" style="max-width: 400px;">
+<!--          <a href="https://www.ncpachina.org/en/">-->
+<!--            <img src="assets/icons/ncpalogohdwhite.svg" alt="NCPA logo">-->
+<!--          </a>-->
+        </div>
+      </div>
+
+      <!--Grid column 2-->
+      <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4 smooth-scroll">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Conference</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="http://scmun.net/#home" class="font-weight-bold">Home</a>
+        </p>
+        <p>
+          <a href="http://scmun.net/#about">About</a>
+        </p>
+        <p>
+          <a href="registration.html">Register</a>
+        </p>
+        <p>
+          <a href="logisticArrangements.html">Logistic Arrangements</a>
+        </p>
+        <p>
+          <a href="schedule.html">Schedule</a>
+        </p>
+        <p>
+          <a href="venue.html">Venue</a>
+        </p>
+      </div>
+
+      <!--Grid column 3-->
+      <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Committees</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p class="">
+          <a href="UNSC.html">UNSC</a>
+        </p>
+        <p>
+          <a href="DISEC.html">DISEC</a>
+        </p>
+        <p>
+          <a href="WHO.html">WHO</a>
+        </p>
+        <p>
+          <a href="ECOSOC.html">ECOSOC</a>
+        </p>
+        <p>
+          <a href="SOCHUM.html">SOCHUM</a>
+        </p>
+        <p>
+          <a href="UNICEF.html">UNICEF</a>
+        </p>
+      </div>
+
+      <!--Grid column 4-->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i>180 Gang Qian Boulevard, Nansha, Guangzhou, Guangdong, China 511458
+        </p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i>scmun@ncpachina.org
+        </p>
+
+        <p>
+          <a href="https://github.com/leonluleonlu/SCMUN2019">
+            <i class="fab fa-github mr-3"></i><u>SCMUN2019</u>
+          </a>
+        </p>
+        <p>
+          <a href="managers.html">
+            <i class="fas fa-user-tie mr-3"></i><u>Managers</u>
+          </a>
+        </p>
+        <p>
+          <a href="officers.html">
+            <i class="fal fa-user mr-3"></i><u>Officers</u>
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <!--/Footer Links -->
+
+  <!--Copyright -->
+  <div class="footer-copyright text-center py-3">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 text-md-left">
+          © 2019 Copyright:
+          <a href="http://scmun.net"> SCMUN</a>
+        </div>
+
+        <div class="col-12 col-md-6 text-md-right">
+          Website designed, built, and maintained by Leon Lu
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!--Copyright -->
+
+</footer>
+
+<!------------------------->
+<!---------Scripts--------->
+<!------------------------->
+<div>
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Animation script -->
+  <script>
+      new WOW().init();
+  </script>
+  <!-- Lazy loading -->
+  <script>
+      window.addEventListener('load', function(){
+          var allimages= document.getElementsByTagName('img');
+          for (var i=0; i<allimages.length; i++) {
+              if (allimages[i].getAttribute('data-src')) {
+                  allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+              }
+          }
+      }, false)
+  </script>
+</div>
+</body>
+
+</html>

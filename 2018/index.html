@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SCMUN</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="jquery.color-2.1.2.min.js"></script>
+	<style type="text/css">
+		.registrationBtn {
+			padding: 3px;
+			background-color: green;
+			border: rgba(255, 255, 255, 0.8) solid;
+			border-radius: 5px;
+			margin: 2% 2%;
+		}
+		/*Bootstrap Partial Implementation*/
+			.btn:not(:disabled):not(.disabled) {
+			    cursor: pointer;
+			}
+			.btn-outline-primary:hover {
+			    color: rgba(0, 0, 0, 1);
+			    background-color: #a2d4ff;
+			    border-color: #a2d4ff;
+			}
+			.btn:focus, .btn:hover {
+			    text-decoration: none;
+			}
+			[type=reset], [type=submit], button, html [type=button] {
+			    -webkit-appearance: button;
+			}
+			.btn-outline-primary {
+			    color: #a2d4ff;
+			    background-color: transparent;
+			    background-image: none;
+			    border-color: #a2d4ff;
+			    margin-left: 0.2%;
+			    margin-right: 0.2%;
+			}
+			.btn {
+			    display: inline-block;
+			    font-weight: 400;
+			    text-align: center;
+			    white-space: nowrap;
+			    vertical-align: middle;
+			    -webkit-user-select: none;
+			    -moz-user-select: none;
+			    -ms-user-select: none;
+			    user-select: none;
+			    border: 1px solid;
+			    padding: .375rem .75rem;
+			    font-size: 1rem;
+			    line-height: 1.5;
+			    border-radius: .25rem;
+			    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+			}
+			button, select {
+			    text-transform: none;
+			}
+			button, input {
+			    overflow: visible;
+			}
+			button, input, optgroup, select, textarea {
+			    margin: 0;
+			    font-family: inherit;
+			    font-size: inherit;
+			    line-height: inherit;
+			}
+			button {
+			    border-radius: 0;
+			}
+			input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+			    padding: 1px 6px;
+			}
+			input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+			    align-items: flex-start;
+			    text-align: center;
+			    cursor: default;
+			    color: buttontext;
+			    background-color: buttonface;
+			    box-sizing: border-box;
+			    padding: 2px 6px 3px;
+			    border-width: 2px;
+			    border-style: outset;
+			    border-color: buttonface;
+			    border-image: initial;
+			}
+			input, textarea, select, button {
+			    text-rendering: auto;
+			    color: initial;
+			    letter-spacing: normal;
+			    word-spacing: normal;
+			    text-transform: none;
+			    text-indent: 0px;
+			    text-shadow: none;
+			    display: inline-block;
+			    text-align: start;
+			    margin: 0em;
+			    font: 400 13.3333px Arial;
+			}
+			input, textarea, select, button, meter, progress {
+			    -webkit-writing-mode: horizontal-tb !important;
+			}
+			button {
+			    -webkit-appearance: button;
+			}
+			/*body {
+			    margin: 0;
+			    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+			    font-size: 1rem;
+			    font-weight: 400;
+			    color: #212529;
+			    text-align: left;
+			}*/
+			:root {
+			    --blue: #a2d4ff;
+			    --indigo: #6610f2;
+			    --purple: #6f42c1;
+			    --pink: #e83e8c;
+			    --red: #dc3545;
+			    --orange: #fd7e14;
+			    --yellow: #ffc107;
+			    --green: #28a745;
+			    --teal: #20c997;
+			    --cyan: #17a2b8;
+			    --white: #fff;
+			    --gray: #6c757d;
+			    --gray-dark: #343a40;
+			    --primary: #a2d4ff;
+			    --secondary: #6c757d;
+			    --success: #28a745;
+			    --info: #17a2b8;
+			    --warning: #ffc107;
+			    --danger: #dc3545;
+			    --light: #f8f9fa;
+			    --dark: #343a40;
+			    --breakpoint-xs: 0;
+			    --breakpoint-sm: 576px;
+			    --breakpoint-md: 768px;
+			    --breakpoint-lg: 992px;
+			    --breakpoint-xl: 1200px;
+			    /*--font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+			    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;*/
+			}
+			/*html {
+			    font-family: sans-serif;
+			    -webkit-text-size-adjust: 100%;
+			    -ms-text-size-adjust: 100%;
+			    -ms-overflow-style: scrollbar;
+			    -webkit-tap-highlight-color: transparent;
+			}*/
+	</style>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+
+</head>
+<body>
+
+	<div class="topBar" id="backOfTopBar"></div>
+	<div class="topBar">
+		<img class="logo" onclick="window.location = '/'" style="cursor: pointer;" src="logo.png">
+		<span id="scmun" onclick="window.location = '/'" style="cursor: pointer;">SCMUN VII</span>
+		<br>
+		<span id="hostedby" onclick="window.location = '/'" style="cursor: pointer;">Hosted by Nansha College Preparatory Academy</span>
+		<div class="burgerBars">
+			<div class="burgerBar1"></div>
+			<div class="burgerBar2"></div>
+			<div class="burgerBar3"></div>
+		</div>
+	</div>
+
+	<div class="burgerSlideoutPanel">
+		<p class="burgerItems" onclick="window.location = '/'" style="cursor: pointer;">CONFERENCE</p>
+		<p class="burgerSubItems" onclick="window.location = 'MUN_Directors_Message.html'" style="cursor: pointer;">MUN Director's Message<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'Schedule.html'" style="cursor: pointer;">Schedule<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'comntops.html'" style="cursor: pointer;">Committees & Topics<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'Room_Assignments.html'" style="cursor: pointer;">Room Assignments<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'procedures.html'" style="cursor: pointer;">Procedures & Rules<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'awards.html'" style="cursor: pointer;">Awards Available<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerItems">MANAGEMENT TEAM</p>
+		<p class="burgerSubItems" onclick="window.location = 'managers.html'" style="cursor: pointer;">Managers<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'officers.html'" style="cursor: pointer;">Officers<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerItems">CONTACT US</p>
+		<p class="burgerSubItems" onclick="window.location = 'contactinfo.html'" style="cursor: pointer;">Contact Information<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'directions.html'" style="cursor: pointer;">Directions<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'scmunmuseum.html'" style="cursor: pointer;">SCMUN Museum<span class="burgerSubItemArrow">></span></p>
+	</div>
+
+	<div class="restOfThePage">
+		<div class="pg1">
+			<p class="massiveCenteredTitle">Promoting Equality</p>
+			<p class="massiveCenteredTitle" style="margin-top: 0;">Alongside Gen-Z</p>
+			<p class="description" style="font-size: 1.25rem;">South China Model United Nations</p>
+		</div>
+
+		<hr align="center" width="62%" style="margin-bottom: 2%;">
+
+		<!-- <div class="pg2">
+			<p class="bigCenteredTitle smallMarginTop">Why Gen-Z? (TBD)</p>
+			<p class="mediumCenteredTitle smallMarginTop">Description (TBD)</p>
+			<p>Detailed information... (TBD)</p>
+		</div> -->
+
+		<div class="pg3">
+			<p class="bigCenteredTitle smallMarginTop">Director's Message</p>
+			<img class="photoPortrait mediumMarginTop kindaLeft" src="person_Director.png">
+			<div style="text-align: left;">
+				<p class="description limitWidth">Dear SCMUN Attendees,</p>
+				<p class="description limitWidth">To our guests from elsewhere, welcome to Nansha College Preparatory Academy!  We are very honored to host you at this event, which we have proudly sponsored since our school's founding in 2012.  As NCPA students will tell you, the mission of this school is to ensure that our students achieve academic and social excellence.  I can think of no co-curricular activity that better aligns with our mission than Model UN!   </p>
+				<p class="description limitWidth">We aim for NCPA students to become effective negotiators, collaborative learners, resourceful planners and principled achievers.  In the next two days at our school, you all will consider the great, global issues of the day; you will work together to craft solutions; you will negotiate with those who are affected; and you will achieve consensus on your resolutions.  I wish you a productive and meaningful experience here!</p>
+				<p class="description limitWidth sincerely">Michael Cyrus, Ed.D.</p>
+				<p class="description limitWidth sincerely">Director</p>
+				<p class="description limitWidth sincerely">Nansha College Preparatory Academy</p>
+			</div>
+
+		</div>
+
+		<hr align="center" width="62%" style="margin-bottom: 2%;">
+
+		<div class="pg3" style="height: 80vh;">
+			<p class="bigCenteredTitle smallMarginTop">Registration Process</p>
+			<p style="margin: 3% 17%; text-align: left; font-size: 1.15rem;">If you would like to participate in SCMUN VII as a school or an individual delegate, please use the link below to register. For further questions, please email scmun@napchina.org. To retrieve a copy of our invitation letter, please click on the link in the bottom-left corner. After receiving your registration, we will be sending you the Registration Form II for delegate positions and logistic arrangements.</p>
+			<div style="margin: 1% 17%;">
+				<button class="btn btn-outline-primary" onclick="window.location = 'https://forms.office.com/Pages/ResponsePage.aspx?id=2T9-jRAWI0WnKJ8y1khfUg_-kePppnlJitlnHEja0rxUQUVOWVFNOVNMUUk0MUdUWFYyQVgyNERFUi4u'">Delegate Registration</button>
+				<button class="btn btn-outline-primary" onclick="window.location = 'https://forms.office.com/Pages/ResponsePage.aspx?id=2T9-jRAWI0WnKJ8y1khfUukB9KBR7O1HkWuEuodnXZFURUFXUTc4N05ENTVBMjJFUTEyUzBRU001MC4u'">Individual Registration</button>
+				<button class="btn btn-outline-primary" onclick="window.location = 'https://ncpachinaorg-my.sharepoint.com/:b:/g/personal/scmun_ncpachina_org/Eb-3o1q-OptNqtLi1UrMH2QBvm4m9Ic9GqXllfFOPUBPtg?e=dElvvl'">Invitation Letter</button>
+				<button class="btn btn-outline-primary" onclick="window.location = 'https://forms.office.com/Pages/ResponsePage.aspx?id=2T9-jRAWI0WnKJ8y1khfUukB9KBR7O1HkWuEuodnXZFUNkhSVEVETTNWRzkzVUdUMFhCM0VKMEk3Ry4u'">NCPA Student Registration</button>
+			</div>
+			<p style="margin-top: 12.5rem; font-size: 1.3rem;">*For more information, please open the menu from the top right corner.</p>
+		</div>
+
+	</div>
+
+</body>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+		// startAnimation(0)
+		startAnimation(0.75)
+	</script>
+</html>

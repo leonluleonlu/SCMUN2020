@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SCMUN</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		.mainTopics {
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin-top: 6%;
+			text-align: left;
+			margin-left: 19%;
+			margin-right: 19%;
+			font-style: italic;
+			cursor: pointer;
+		}
+		.subTopics {
+			font-size: 1.2rem;
+			text-align: left;
+			margin-left: 26%;
+			margin-right: 19%;
+			color: #CFCFCF;
+		}
+		.subTopics:hover {
+			color: #FFF;
+		}
+		.smallClickableIcon {
+			padding: 1px 8px; border: 1.4px solid #bbb; border-radius: 5px; margin-left: 3%; font-size: 0.95rem; font-style: normal; color: #bbb; cursor: pointer;
+			vertical-align: middle;
+			background-color: rgba(255, 255, 255, 0);
+		}
+		.smallClickableIcon:hover {
+			padding: 1px 8px; border: 1.4px solid #FFF; border-radius: 5px; margin-left: 3%; font-size: 0.95rem; font-style: normal; color: #000; cursor: pointer;
+			vertical-align: middle;
+			background-color: rgba(255, 255, 255, 1);
+		}
+		.topicDescription {
+			margin-left: 26%;
+			margin-right: 20%;
+			text-align: left;
+			padding: 8px;
+			border: 1px solid white;
+			border-radius: 12px;
+			display: none;
+			height: auto;
+			opacity: 0;
+			font-size: 1.2rem;
+		}
+		.smallClickableIconPDF {
+			padding: 1px 8px; border: 1.4px solid #bbb; border-radius: 5px; margin-left: 3%; font-size: 0.95rem; font-style: normal; color: #bbb; cursor: pointer; background-color: rgba(255, 0, 0, 0); font-weight: 600;
+		}
+		.smallClickableIconPDF:hover {
+			padding: 1px 8px; border: 1.4px solid #ed1b24; border-radius: 5px; margin-left: 3%; font-size: 0.95rem; font-style: normal; color: #79d1ff; cursor: pointer; background-color: rgba(237, 27, 36, 0.25); font-weight: 600;
+		}
+		.comnLogo {
+			width: 3.2rem; /*Specific sizing will be further adjusted down below*/
+			height: auto;
+			vertical-align: middle;
+			margin-right: 1%; /*Specific margin-right will be further adjusted down below*/
+		}
+	</style>
+</head>
+<body>
+
+	<div class="topBar" id="backOfTopBar"></div>
+	<div class="topBar">
+		<img class="logo" onclick="window.location = '/'" style="cursor: pointer;" src="logo.png">
+		<span id="scmun" onclick="window.location = '/'" style="cursor: pointer;">SCMUN VII</span>
+		<br>
+		<span id="hostedby" onclick="window.location = '/'" style="cursor: pointer;">Hosted by Nansha College Preparatory Academy</span>
+		<div class="burgerBars">
+			<div class="burgerBar1"></div>
+			<div class="burgerBar2"></div>
+			<div class="burgerBar3"></div>
+		</div>
+	</div>
+
+	<div class="burgerSlideoutPanel">
+		<p class="burgerItems" onclick="window.location = '/'" style="cursor: pointer;">CONFERENCE</p>
+		<p class="burgerSubItems" onclick="window.location = 'MUN_Directors_Message.html'" style="cursor: pointer;">MUN Director's Message<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'Schedule.html'" style="cursor: pointer;">Schedule<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'comntops.html'" style="cursor: pointer;">Committees & Topics<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'Room_Assignments.html'" style="cursor: pointer;">Room Assignments<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'procedures.html'" style="cursor: pointer;">Procedures & Rules<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'awards.html'" style="cursor: pointer;">Awards Available<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerItems">MANAGEMENT TEAM</p>
+		<p class="burgerSubItems" onclick="window.location = 'managers.html'" style="cursor: pointer;">Managers<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'officers.html'" style="cursor: pointer;">Officers<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerItems">CONTACT US</p>
+		<p class="burgerSubItems" onclick="window.location = 'contactinfo.html'" style="cursor: pointer;">Contact Information<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'directions.html'" style="cursor: pointer;">Directions<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'scmunmuseum.html'" style="cursor: pointer;">SCMUN Museum<span class="burgerSubItemArrow">></span></p>
+	</div>
+
+	<div class="restOfThePage">
+
+		<div class="pg3 leaveNavbarMarginToStartPage" style="height: 127vh;">
+			<p class="bigCenteredTitle smallMarginTop">Committees and Topics</p>
+			<!-- <p style="text-align: right; margin-right: 20%;">*Hover your mouse on a committee to see its description.</p> -->
+
+			<div>
+				<p class="mainTopics" style="margin-top: 4%;" id="securityCouncil"><img style="width: 3.6rem;" class="comnLogo" src="ComnLogos/ComnLogo (6).png">Security Council<span class="smallClickableIcon">i</span></p>
+					<!-- <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft//.pdf'">PDF</span> -->
+				<p class="topicDescription">Founded alongside with the United Nations itself, the Security Council has primary responsibility for the maintenance of international peace and security. The Security Council works to eliminate threats to peace or acts of aggression. All Member States are obligated to comply with Council decisions under the UN Charter.</p>
+				<p class="subTopics">Topic 1: Conflict in Somalia<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/UNSC/UNSC Owen.pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: Territorial Dispute in Ukraine<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/UNSC/SCMUN VII UNSC.pdf'">PDF</span></p>
+			</div>
+
+			<div>
+				<p class="mainTopics"><img style="width: 3.1rem; margin-right: 2.35%;" class="comnLogo" src="ComnLogos/ComnLogo (4).png">Economic and Social Committee (ECOSOC)<span class="smallClickableIcon">i</span></p>
+				<p class="topicDescription">The Economic and Social Council is at the heart of the United Nations system to advance the three dimensions of sustainable development – economic, social and environmental. </p>
+				<p class="subTopics">Topic 1: Addressing Economic Applications of Artificial Intelligence<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/ECOSOC/ECOSOC Caroline Wang.pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: Addressing Child Marriage Issue Worldwide<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/ECOSOC/ECOSOC Olivia Lin.pdf'">PDF</span></p>
+			</div>
+
+			<div>
+				<p class="mainTopics"><img style="width: 3.8rem; margin-right: 1.35%;" class="comnLogo" src="ComnLogos/ComnLogo (2).png">General Assembly 1 -- Disarmament & International Security (DISEC)<span class="smallClickableIcon">i</span></p>
+				<p class="topicDescription">DISEC tackles with disarmament, global challenges and threats to peace that affect the international community and seeks out solutions to the challenges in the international security regime.</p>
+				<p class="subTopics">Topic 1: Protection of Civilians in Armed Conflicts<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/GA1/GA1 Alex Wu.pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: The Israeli-Palestinian Conflicts at the Gaza Corridor<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/GA1/GA1 Cormac Lee.pdf'">PDF</span></p>
+			</div>
+
+			<div>
+				<p class="mainTopics"><img style="width: 3.1rem; margin-right: 2.35%;" class="comnLogo" src="ComnLogos/ComnLogo (8).png">General Assembly 3 -- Social, Cultural, and Humanitarian (SOCHUM)<span class="smallClickableIcon">i</span></p>
+				<p class="topicDescription">As the third committee of the General Assembly, SOCHUM is in charge of items relating to a range of social, humanitarian affairs and human rights issues that affect people all over the world. </p>
+				<p class="subTopics">Topic 1: Gender-Based Violence as a Weapon of War <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/GA3/SOCHUM Zoey Zhou .pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: Combatting the Growing Islamophobia in Non-Islamic Countries <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/GA3/SCMUN VII Final Chair Statement Helen Wang.pdf'">PDF</span></p>
+			</div>
+
+			<div>
+				<p class="mainTopics"><img style="width: 3.7rem; margin-right: 1.4%;" class="comnLogo" src="ComnLogos/ComnLogo (5).png">General Assembly 6 -- Legal<span class="smallClickableIcon">i</span></p>
+				<p class="topicDescription">The Sixth Committee is the primary forum for the consideration of legal questions in the General Assembly. International laws, treaties and protocols are debated in this committee. </p>
+				<p class="subTopics">Topic 1: Laws to Address Cyberbullying and Improper Use of Technology Among Gen Z <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/GA6/Chair Statement GA6.pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: Laws to Moderating the Distribution of Addictive Substances Among Gen Z<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/GA6/GA6 Christina Fan.pdf'">PDF</span></p>
+			</div>
+
+			<div>
+				<p class="mainTopics"><img style="width: 3.6rem; margin-right: 2.35%;" class="comnLogo" src="ComnLogos/ComnLogo (9).png">United Nations Development Programme (UNDP)<span class="smallClickableIcon">i</span></p>
+				<p class="topicDescription">The United Nation Development Program's continuing mission is to help achieve the eradication of poverty, and the reduction of inequalities and exclusion. The UNDP helps countries to develop policies, partnering abilities, institutional capabilities and build resilience in order to sustain development results. </p>
+				<p class="subTopics">Topic 1: Promoting Climate Resilience in Response to Adverse Climate Change<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/UNDP/UNDP Serena Cao.pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: Reducing Environmental Waste by Promoting Reasonable Consumption and Production <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/UNDP/UNDP Alisa Chen (2).pdf'">PDF</span></p>
+			</div>
+
+			<div>
+				<p class="mainTopics"><img style="width: 4.2rem;" class="comnLogo" src="ComnLogos/ComnLogo (10).png">United Nations Environment Programme (UNEP)<span class="smallClickableIcon">i</span></p>
+				<p class="topicDescription">The United Nations Environment Program is the leading global environmental authority that sets the global environmental agenda, promotes the coherent implementation of the environmental dimension of sustainable development, and serves as an authoritative advocate for the global environment. </p>
+				<p class="subTopics">Topic 1: Addressing the Issue of Plastic Pollution in the Ocean <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/UNEP/UNEP Allison.pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: On Measures to Mitigate the Negative Impacts of Air Pollution in MEDCs and LEDCs<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/UNEP/SCMUN chair report(5).pdf'">PDF</span></p>
+			</div>
+
+			<div>
+				<p class="mainTopics"><img style="width: 4.4rem;" class="comnLogo" src="ComnLogos/ComnLogo (1).png">World Health Organization (WHO)<span class="smallClickableIcon">i</span></p>
+				<p class="topicDescription">The World Health organization is the directing and coordinating authority on international health within the United Nations' system. The WHO helps build heath systems and set agenda on the most important health issues on Earth. </p>
+				<p class="subTopics">Topic 1: Global Strategy to Reduce Harmful Use of Alcohol and Early Alcoholic Abuse Among Gen Z <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/WHO/WHO Alcohol .pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: Promoting the Prevention of Suicide and Mental Disorders Among Gen Z<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/WHO/SCMUN VII WHO suicide.pdf'">PDF</span></p>
+			</div>
+
+			<div>
+				<p class="mainTopics"><img style="width: 3.6rem; margin-right: 2.32%;" class="comnLogo" src="ComnLogos/ComnLogo (7).png">The United Nations Educational, Scientific and Cultural Organization (UNESCO)<span class="smallClickableIcon">i</span></p>
+				<p class="topicDescription">UNESCO works to create dialogue among civilizations, cultures and peoples, based upon respect for shared values. Through this dialogue, the world can achieve global visions of sustainable development encompassing observance of human rights, mutual respect and the alleviation of poverty. </p>
+				<p class="subTopics">Topic 1: Promoting Gender Equality Education Among Gen Z <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/UNESCO/UNESCO chair report Aditi Roy.pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: Tackling the Issue of Low Literacy Rates of Refugees<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/UNESCO/UNESCO Stephanie (1).pdf'">PDF1</span> <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/UNESCO/Snows CS the final draft.pdf'">PDF2</span></p>
+			</div>
+
+			<div>
+				<p class="mainTopics"><img style="width: 3.9rem; margin-right: 1.5%;" class="comnLogo" src="ComnLogos/ComnLogo (3).png">The Commission on the Status of Women (CSW)<span class="smallClickableIcon">i</span></p>
+				<p class="topicDescription">The Commission on the Status of Women is dedicated to the promotion of gender equality and the empowerment of women. The CSW also addresses questions affecting the situation of women, that require through consideration. </p>
+				<p class="subTopics">Topic 1: Empowering Women and Girls in Rural Areas through Information and Communication Technology (ICT) <span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/CSW/CSW Stephanie Wang.pdf'">PDF</span></p>
+				<p class="subTopics">Topic 2: Promote Female Employment and Wage Rates<span class="smallClickableIconPDF" style="margin-left: 1.5%;" onclick="window.location = 'CS final draft/CSW/CSW Flora.pdf'">PDF</span></p>
+			</div>
+
+				
+
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+		</div>
+
+	</div>
+
+</body>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+		startAnimation()
+		$("span.smallClickableIcon").hover(
+			function() {
+				$(this).closest('div').find(".topicDescription").css({"display": "block", 'overflow': 'auto'}).animate({'opacity': '1'}, 600)
+			}, // .next() finds the next ONE
+			function() {
+				$(this).closest('div').find(".topicDescription").animate({'opacity': '0'}, 200).hide(1)
+			})
+	</script>
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>SCMUN VIII | Schedule</title>
+  <!-- Tab icon -->
+  <link rel="icon" href="assets/icons/favicon.ico">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="style.css" rel="stylesheet">
+
+  <!--Custom CSS-->
+  <style>
+    /*  WOW after load  */
+    .wow {
+      visibility: hidden;
+    }
+    /*  Navbar  */
+    .navbar {
+      background: rgba(6, 39, 82, 0.9) !important;
+    }
+    #current {
+      background-color: #e0e0e0;
+    }
+
+    /*  Responsive display  */
+    @media (max-width: 991px) {
+      .display-4 {
+        font-size: 3.2rem;
+      }
+    }
+    @media (max-width: 767px) {
+      .display-4 {
+        font-size: 2.4rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .display-4 {
+        font-size: 2rem;
+      }
+    }
+
+    /*  Map  */
+    .map-container{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+    }
+    .map-container iframe{
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+    }
+
+    /*  Big Container  */
+    .small-container {
+      width: 800%;
+      padding-right: 45px;
+      padding-left: 45px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width: 576px) {
+      .small-container {
+        max-width: 540px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .small-container {
+        max-width: 720px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .small-container {
+        max-width: 1160px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .small-container {
+        max-width: 1440px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!------------------------>
+<!---------Header--------->
+<!------------------------>
+<header>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container-fluid px-xl-5 px-lg-3">
+      <!--Navbar structure-->
+      <a class="navbar-brand" href="http://scmun.net/">
+        <img src="assets/icons/scmunlogo.svg" id="logo" class="scmunlogo d-inline-block align-top"
+             alt="[logo]" style="height: 30px; padding: 0;">
+      </a>
+      <a href="http://scmun.net/" class="navbar-brand">
+        <strong>SCMUN VIII</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+              aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--/Navbar structure-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <!--LHS-->
+        <ul class="navbar-nav mr-auto">
+          <!--Home Button-->
+          <li class="nav-item">
+            <a class="nav-link" href="http://scmun.net/#home" onclick="new WOW().init();">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <!--Registration-->
+          <li class="nav-item">
+            <a class="nav-link" href="registration.html">Register <span class="sr-only">(current)</span></a>
+          </li>
+          <!--Conference-->
+          <li class="nav-item dropdown smooth-scroll active">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              Conference
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="http://scmun.net/#home" onclick="new WOW().init();">Home</a>
+              <a class="dropdown-item" href="http://scmun.net/#about">About</a>
+              <a class="dropdown-item" href="http://scmun.net/#ncpaDirectorMessage">NCPA Director's Message</a>
+              <a class="dropdown-item" href="http://scmun.net/#vision">Our Vision</a>
+              <a class="dropdown-item" href="http://scmun.net/#munDirectorMessage">MUN Director's Message</a>
+              <a class="dropdown-item" href="http://scmun.net/#committeesAvailable">Committees Available</a>
+              <a class="dropdown-item" href="http://scmun.net/#registrationProcess">Registration Process</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="history.html">History</a>
+              <a class="dropdown-item" href="logisticArrangements.html">Logistic Arrangements</a>
+              <a class="dropdown-item" id="current" href="schedule.html">Schedule</a>
+              <a class="dropdown-item" href="venue.html">Venue</a>
+              <a class="dropdown-item" href="awards.html">Awards Available</a>
+            </div>
+          </li>
+          <!--Committees-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              Committees
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="UNSC.html">United Nation Security Council (UNSC)</a>
+              <a class="dropdown-item" href="DISEC.html">General Assembly 1 -- Disarmament & International Security
+                (DISEC)</a>
+              <a class="dropdown-item" href="WHO.html">World Health Organisation (WHO)</a>
+              <a class="dropdown-item" href="ECOSOC.html">Economic and Social Committee (ECOSOC)</a>
+              <a class="dropdown-item" href="SOCHUM.html">General Assembly 3 -- Social, Cultural, and Humanitarian
+                (SOCHUM)</a>
+              <a class="dropdown-item" href="UNICEF.html">United Nations Children's Fund (UNICEF)</a>
+            </div>
+          </li>
+          <!--Team-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              SCMUN Team
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="managers.html">Managers</a>
+              <a class="dropdown-item" href="officers.html">Officers</a>
+            </div>
+          </li>
+          <!--Resources-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              Resources
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="procedures.html">Rules and Procedures</a>
+              <a class="dropdown-item" href="contact.html">Contact</a>
+            </div>
+          </li>
+          <!--Gallery-->
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery<span class="sr-only"></span></a>
+          </li>
+        </ul>
+        <!--/LHS-->
+
+        <!--RHS-->
+        <ul class="navbar-nav ml-auto">
+          <!--Internal Portal-->
+          <li class="nav-item">
+
+            <a id="navbar-static-login" class="nav-link font-weight-light font-weight-light" data-toggle="modal" data-target="#navbarLogin">Internal Portal
+              <i class="fas fa-sign-in-alt"></i>
+            </a>
+
+          </li>
+        </ul>
+        <!--/RHS-->
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<!-------------------------------->
+<!----------Page Content---------->
+<!-------------------------------->
+<main class="pt-5 grey lighten-5">
+  <!--Schedule-->
+  <div class="container-fluid mt-2 mt-lg-3 mt-xl-4 white">
+    <div class="pt-3">
+      <section class="section pt-2 pb-5">
+
+        <div class="container">
+
+          <!--Heading-->
+          <h1 class="display-4 text-center text-uppercase font-weight-bold mt-3 mt-sm-4 mt-lg-5 mb-2 mb-sm-3 mb-md-5 wow fadeInDown"
+              data-wow-delay="0.2s">Conference Schedule</h1>
+
+          <h1 class="h1-responsive text-left mt-5 font-weight-bolder wow fadeInDown">SCMUN VIII Schedule</h1>
+
+        </div>
+
+        <!--Content-->
+
+        <div class="embed-responsive small-container my-3 grey lighten-4 wow fadeIn" style="height: 40rem;">
+          <iframe class="embed-responsive-item" src="https://outlook.live.com/owa//calendar/00000000-0000-0000-0000-000000000000/5f431ed2-8788-4a78-94bd-8de9b1a7c481/cid-06158066B197CB85/index.html" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+        <div class="container">
+          <p class="text-left wow fadeIn text-muted">*Please navigate to December 2019 to see the schedule on the calendar above.
+          </p>
+          <!-- <p class="text-left wow fadeIn text-muted">**Detailed SCMUN VIII schedule will be available on this page before December 2019. -->
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!--Timeline-->
+  <div class="mt-2 mt-lg-3 mt-xl-4 grey lighten-3">
+    <div class="container pt-3">
+      <section class="section pt-2 pb-5">
+
+        <h1 class="h1-responsive text-left mt-5 font-weight-bolder wow fadeInDown">Event Timeline</h1>
+
+        <!--Content-->
+
+        <div class="row">
+
+          <div class="col-12 col-xl-4">
+            <table id="tablePreview" class="table z-depth-1-half table-hover wow fadeIn mt-4" data-wow-delay="0s" data-wow-duration="0.8s">
+
+              <thead>
+              <tr>
+                <th colspan="2"><strong>Friday, 13 December</strong></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <tr>
+                <th scope="row" style="width: 130px;">15:05-18:30</th>
+                <td>Registration</td>
+              </tr>
+              <tr>
+                <th scope="row">17:30-19:00</th>
+                <td>Dinner</td>
+              </tr>
+              <tr>
+                <th scope="row">19:20-20:00</th>
+                <td>Opening Ceremony</td>
+              </tr>
+              <tr>
+                <th scope="row">20:10-21:00</th>
+                <td>Committee Session 1</td>
+              </tr>
+              <tr>
+                <th scope="row">21:00</th>
+                <td>Dismissal</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-12 col-xl-4">
+            <table id="tablePreview" class="table z-depth-1-half table-hover wow fadeIn mt-4" data-wow-delay="0s" data-wow-duration="0.8s">
+
+              <thead>
+              <tr>
+                <th colspan="2"><strong>Saturday, 14 December</strong></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <tr>
+                <th scope="row" style="width: 130px;">07:30-09:00</th>
+                <td>Breakfast (Outside Delegates Arrive Before 9:00)</td>
+              </tr>
+              <tr>
+                <th scope="row">09:00-11:30</th>
+                <td>Committee Session 2</td>
+              </tr>
+              <tr>
+                <th scope="row">11:30-12:30</th>
+                <td>Lunch</td>
+              </tr>
+              <tr>
+                <th scope="row">12:30-15:30</th>
+                <td>Committee Session 3</td>
+              </tr>
+              <tr>
+                <th scope="row">15:30-15:40</th>
+                <td>Break</td>
+              </tr>
+                <th scope="row">15:40-17:40</th>
+                <td>Committee Session 4</td>
+              </tr>
+              <tr>
+                <th scope="row">17:40-18:40</th>
+                <td>Dinner</td>
+              </tr>
+              <tr>
+                <th scope="row">18:40-21:00</th>
+                <td>Committee Session 5</td>
+              </tr>
+              <tr>
+                <th scope="row">21:00</th>
+                <td>Dismissal</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-12 col-xl-4">
+            <table id="tablePreview" class="table z-depth-1-half table-hover wow fadeIn mt-4" data-wow-delay="0s" data-wow-duration="0.8s">
+
+              <thead>
+              <tr>
+                <th colspan="2"><strong>Sunday, 15 December</strong></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <tr>
+                <th scope="row" style="width: 130px;">07:30-09:00</th>
+                <td>Breakfast (Outside Delegates Arrive Before 9:00)</td>
+              </tr>
+              <tr>
+                <th scope="row">09:00-11:30</th>
+                <td>Committee Session 6</td>
+              </tr>
+              <tr>
+                <th scope="row">10:00-10:10</th>
+                <td>Break</td>
+              </tr>
+              <tr>
+                <th scope="row">11:30-12:30</th>
+                <td>Lunch</td>
+              </tr>
+              <tr>
+                <th scope="row">12:30-13:30</th>
+                <td>Closing Ceremony</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- <p class="text-left wow fadeIn text-muted">*SCMUN VIII event timeline will be available on this page before December 2019. -->
+        </p>
+
+      </section>
+    </div>
+  </div>
+
+</main>
+
+<!--Modal: Login / Register Form Demo-->
+<div class="modal fade" id="navbarLogin" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header text-centre">
+        <h4 class="modal-title w-100 font-weight-bold text-center">SCMUN VIII Internal Portal</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <p class="py-2">If you are part of the SCMUN management team, you can access the internal portal by typing in your access code.</p>
+
+        <div class="md-form mb-4">
+          <label for="internalPortalInput">Access code</label>
+          <input type="password" id="internalPortalInput" class="form-control" required>
+          <div class="invalid-feedback">
+            Please enter a valid access code.
+          </div>
+          <div class="valid-feedback ">
+            Welcome back!
+          </div>
+
+          <button id="internalPortalButton" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Go</button>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- Modal content -->
+  </div>
+</div>
+<!--Modal: Login / Register Form Demo-->
+
+<!-------------------------->
+<!----------Footer---------->
+<!-------------------------->
+<footer class="page-footer font-small unique-color-dark">
+  <!--Footer top-->
+  <div class="light-blue darken-3">
+    <div class="container">
+
+      <div class="row pb-4 pt-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-8">
+          <h6 class="mb-0">SCMUN on social networks:</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-4">
+          <h6 class="text-right mb-0">
+            <!-- Facebook -->
+            <a class="fb-ic" href="https://www.facebook.com/ncpascmun/">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic" href="https://www.instagram.com/ncpascmun/">
+              <i class="fab fa-instagram white-text mr-2"> </i>
+            </a>
+          </h6>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!--Footer bottom-->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!--Grid column 1-->
+      <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mb-4">
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">About Us</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <div class="mx-auto" style="max-width: 400px;">
+          <a href="http://scmun.net/">
+            <img src="assets/icons/scmunlogotext.svg" alt="SCMUN logo with text">
+          </a>
+        </div>
+        <h6 class="text-uppercase font-weight-bolder mb-3 mt-3">Hosted By
+          <a href="https://www.ncpachina.org/en/">
+            Nansha College Preparatory Academy
+          </a>
+        </h6>
+        <div class="mx-auto" style="max-width: 400px;">
+<!--          <a href="https://www.ncpachina.org/en/">-->
+<!--            <img src="assets/icons/ncpalogohdwhite.svg" alt="NCPA logo">-->
+<!--          </a>-->
+        </div>
+      </div>
+
+      <!--Grid column 2-->
+      <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4 smooth-scroll">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Conference</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="http://scmun.net/#home" class="font-weight-bold">Home</a>
+        </p>
+        <p>
+          <a href="http://scmun.net/#about">About</a>
+        </p>
+        <p>
+          <a href="registration.html">Register</a>
+        </p>
+        <p>
+          <a href="logisticArrangements.html">Logistic Arrangements</a>
+        </p>
+        <p>
+          <a href="schedule.html">Schedule</a>
+        </p>
+        <p>
+          <a href="venue.html">Venue</a>
+        </p>
+      </div>
+
+      <!--Grid column 3-->
+      <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Committees</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p class="">
+          <a href="UNSC.html">UNSC</a>
+        </p>
+        <p>
+          <a href="DISEC.html">DISEC</a>
+        </p>
+        <p>
+          <a href="WHO.html">WHO</a>
+        </p>
+        <p>
+          <a href="ECOSOC.html">ECOSOC</a>
+        </p>
+        <p>
+          <a href="SOCHUM.html">SOCHUM</a>
+        </p>
+        <p>
+          <a href="UNICEF.html">UNICEF</a>
+        </p>
+      </div>
+
+      <!--Grid column 4-->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i>180 Gang Qian Boulevard, Nansha, Guangzhou, Guangdong, China 511458
+        </p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i>scmun@ncpachina.org
+        </p>
+
+        <p>
+          <a href="https://github.com/leonluleonlu/SCMUN2019">
+            <i class="fab fa-github mr-3"></i><u>SCMUN2019</u>
+          </a>
+        </p>
+        <p>
+          <a href="managers.html">
+            <i class="fas fa-user-tie mr-3"></i><u>Managers</u>
+          </a>
+        </p>
+        <p>
+          <a href="officers.html">
+            <i class="fal fa-user mr-3"></i><u>Officers</u>
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <!--/Footer Links -->
+
+  <!--Copyright -->
+  <div class="footer-copyright text-center py-3">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 text-md-left">
+          © 2019 Copyright:
+          <a href="http://scmun.net"> SCMUN</a>
+        </div>
+
+        <div class="col-12 col-md-6 text-md-right">
+          Website designed, built, and maintained by Leon Lu
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!--Copyright -->
+
+</footer>
+
+<!------------------------->
+<!---------Scripts--------->
+<!------------------------->
+<div>
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Animation script -->
+  <script>
+      new WOW().init();
+  </script>
+  <!-- Lazy loading -->
+  <script>
+      window.addEventListener('load', function(){
+          var allimages= document.getElementsByTagName('img');
+          for (var i=0; i<allimages.length; i++) {
+              if (allimages[i].getAttribute('data-src')) {
+                  allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+              }
+          }
+      }, false)
+  </script>
+
+  <!-- Main -->
+  <script type="text/javascript" src="main.js"></script>
+</div>
+</body>
+
+</html>

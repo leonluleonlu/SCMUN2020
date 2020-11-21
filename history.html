@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>SCMUN VIII | History</title>
+  <!-- Tab icon -->
+  <link rel="icon" href="assets/icons/favicon.ico">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="style.css" rel="stylesheet">
+
+  <!--Custom CSS-->
+  <style>
+    /*  WOW after load  */
+    .wow {
+      visibility: hidden;
+    }
+    /*  Navbar  */
+    .navbar {
+      background: rgba(6, 39, 82, 0.9) !important;
+    }
+    #current {
+      background-color: #e0e0e0;
+    }
+
+    /*  Responsive display  */
+    @media (max-width: 991px) {
+      .display-4 {
+        font-size: 3.2rem;
+      }
+    }
+    @media (max-width: 767px) {
+      .display-4 {
+        font-size: 2.4rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .display-4 {
+        font-size: 2rem;
+      }
+    }
+
+    /*  Horizontal card  */
+
+    @media (min-width: 576px) {
+      .card-img-left {
+        width: 100%;
+        border-top-left-radius: calc(0.25rem - 1px) !important;
+        border-bottom-left-radius: calc(0.25rem - 1px) !important;
+        border-top-right-radius: 0 !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!------------------------>
+<!---------Header--------->
+<!------------------------>
+<header>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container-fluid px-xl-5 px-lg-3">
+      <!--Navbar structure-->
+      <a class="navbar-brand" href="http://scmun.net/">
+        <img src="assets/icons/scmunlogo.svg" id="logo" class="scmunlogo d-inline-block align-top"
+             alt="[logo]" style="height: 30px; padding: 0;">
+      </a>
+      <a href="http://scmun.net/" class="navbar-brand">
+        <strong>SCMUN VIII</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+              aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--/Navbar structure-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <!--LHS-->
+        <ul class="navbar-nav mr-auto">
+          <!--Home Button-->
+          <li class="nav-item">
+            <a class="nav-link" href="http://scmun.net/#home" onclick="new WOW().init();">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <!--Registration-->
+          <li class="nav-item">
+            <a class="nav-link" href="registration.html">Register <span class="sr-only">(current)</span></a>
+          </li>
+          <!--Conference-->
+          <li class="nav-item dropdown smooth-scroll active">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              Conference
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="http://scmun.net/#home" onclick="new WOW().init();">Home</a>
+              <a class="dropdown-item" href="http://scmun.net/#about">About</a>
+              <a class="dropdown-item" href="http://scmun.net/#ncpaDirectorMessage">NCPA Director's Message</a>
+              <a class="dropdown-item" href="http://scmun.net/#vision">Our Vision</a>
+              <a class="dropdown-item" href="http://scmun.net/#munDirectorMessage">MUN Director's Message</a>
+              <a class="dropdown-item" href="http://scmun.net/#committeesAvailable">Committees Available</a>
+              <a class="dropdown-item" href="http://scmun.net/#registrationProcess">Registration Process</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" id="current" href="history.html">History</a>
+              <a class="dropdown-item" href="logisticArrangements.html">Logistic Arrangements</a>
+              <a class="dropdown-item" href="schedule.html">Schedule</a>
+              <a class="dropdown-item" href="venue.html">Venue</a>
+              <a class="dropdown-item" href="awards.html">Awards Available</a>
+            </div>
+          </li>
+          <!--Committees-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              Committees
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="UNSC.html">United Nation Security Council (UNSC)</a>
+              <a class="dropdown-item" href="DISEC.html">General Assembly 1 -- Disarmament & International Security
+                (DISEC)</a>
+              <a class="dropdown-item" href="WHO.html">World Health Organisation (WHO)</a>
+              <a class="dropdown-item" href="ECOSOC.html">Economic and Social Committee (ECOSOC)</a>
+              <a class="dropdown-item" href="SOCHUM.html">General Assembly 3 -- Social, Cultural, and Humanitarian
+                (SOCHUM)</a>
+              <a class="dropdown-item" href="UNICEF.html">United Nations Children's Fund (UNICEF)</a>
+            </div>
+          </li>
+          <!--Team-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              SCMUN Team
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="managers.html">Managers</a>
+              <a class="dropdown-item" href="officers.html">Officers</a>
+            </div>
+          </li>
+          <!--Resources-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              Resources
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="procedures.html">Rules and Procedures</a>
+              <a class="dropdown-item" href="contact.html">Contact</a>
+            </div>
+          </li>
+          <!--Gallery-->
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery<span class="sr-only"></span></a>
+          </li>
+        </ul>
+        <!--/LHS-->
+
+        <!--RHS-->
+        <ul class="navbar-nav ml-auto">
+          <!--Internal Portal-->
+          <li class="nav-item">
+
+            <a id="navbar-static-login" class="nav-link font-weight-light font-weight-light" data-toggle="modal" data-target="#navbarLogin">Internal Portal
+              <i class="fas fa-sign-in-alt"></i>
+            </a>
+
+          </li>
+        </ul>
+        <!--/RHS-->
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<!-------------------------------->
+<!----------Page Content---------->
+<!-------------------------------->
+<main class="pt-5 grey lighten-5">
+  <!--Founders-->
+  <div class="container-fluid mt-2 mt-lg-3 mt-xl-4 white">
+    <div class="container pt-3">
+      <section class="section pt-2 pb-5">
+
+        <!--Heading-->
+        <h1 class="display-4 text-center text-uppercase font-weight-bold mt-3 mt-sm-4 mt-lg-5 mb-2 mb-sm-3 mb-md-5 wow fadeInDown"
+            data-wow-delay="0.2s">History of SCMUN</h1>
+
+        <h1 class="h1-responsive text-left mt-5 mb-3 font-weight-bolder wow fadeInDown">SCMUN Founders</h1>
+
+        <!--Content-->
+
+        <div class="wow fadeIn" data-wow-delay="0.4s">
+          <h3 class="h3-responsive text-justify font-weight-bolder wow fadeInDown">
+            <strong>Irwin Stein</strong>
+          </h3>
+          <img class="z-depth-2 mt-2 ml-3 mb-3 ml-sm-4 ml-md-4 mb-md-3 ml-lg-5 wow fadeInRight" data-wow-delay="0.2s" src="assets/photos/teachers/IrwinStein.webp" alt="" style="float: right">
+          <p class="text-justify">
+            Mr. Stein helped in the establishment of NCPA and was its Founding Director. He continues to work for the development of quality education for Chinese youth as Director of ULink College. He has always said that a quality school experience should include opportunities for students to learn about the major problems of the world around them, and to exchange ideas about solving these problems. The model united nations concept serves as a way for this experience to become reality for students.
+          </p>
+          <p class="text-justify">
+            Mr. Stein is a co-author of the book, “Uniting the Nations’, which has served as an Instructional Guide for MUN students in many parts of the world. He served as Advisory Board Chairman to the prestigious Hague Model United Nations and has established MUN conferences in Cairo, Caracas, Beijing, Panama, and Taiwan since 1977. The South China MUN follows the principles and procedural rules of all of these conference centres and is dedicated to the struggle for a more harmonious international community.
+          </p>
+
+          <hr>
+
+          <div class="wow fadeIn" data-wow-delay="0.4s">
+            <h3 class="h3-responsive text-justify font-weight-bolder wow fadeInDown">
+              <strong>Sarah Boulware</strong>
+            </h3>
+            <img class="z-depth-2 mt-2 mr-3 mb-3 mr-sm-4 mr-md-4 mb-md-3 mr-lg-5 wow fadeInLeft" data-wow-delay="0.2s" src="assets/photos/teachers/SarahBoulware.webp" alt="" style="float: left">
+            <p class="text-justify">
+              Mrs. Sarah Boulware was the former NCPA MUN director. Mrs. Boulware had been involved with MUN for the past 20 years, participating in various roles such as delegate, chair, conference Secretary-General, Society President, MUN Director, and MUN class teacher. She assisted in the inaugural SCMUN I conference with Mr. Irwin Stein, Mr. Zach Holz, and the teachers of NCPA. Working with the NCPA MUN students and building the SCMUN conference at NCPA with Mr. Stein was an incredible experience with which Mrs. Boulware has been very thankful to be involved.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+  <!--Former leadership-->
+  <div class="container-fluid mt-2 mt-lg-3 mt-xl-4 grey lighten-3">
+    <div class="container pt-3">
+      <section class="section pt-2 pb-5">
+
+        <!--Heading-->
+
+        <h1 class="h1-responsive text-left mt-5 font-weight-bolder wow fadeInDown">Former SCMUN Leadership</h1>
+
+        <!--Content-->
+        <div class="row wow fadeIn" data-wow-delay="0.5s">
+          <!--Card 1-->
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3" style="">
+            <div class="card hoverable">
+              <div class="row no-gutters">
+                <div class="col-sm-5">
+                  <img src="assets/photos/students/former/Serena Yang.webp" class="card-img-top card-img-left" alt="Serena Yang">
+                </div>
+                <div class="col-sm-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Serena Yang</h5>
+                    <p class="card-text font-weight-bolder text-uppercase">Secretary General of SCMUN I, II, III</p>
+                    <hr class="my-xl-4 my-lg-2">
+                    <p class="card-text font-weight-light">Nansha College Preparatory Academy (Class of 2016)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Card 2-->
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3" style="">
+            <div class="card hoverable">
+              <div class="row no-gutters">
+                <div class="col-sm-5">
+                  <img src="assets/photos/students/former/Blair%20Huang.webp" class="card-img-top card-img-left" alt="Blair Huang">
+                </div>
+                <div class="col-sm-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Blair Huang</h5>
+                    <p class="card-text font-weight-bolder text-uppercase">Secretary General of SCMUN IV</p>
+                    <hr class="my-xl-4 my-lg-2">
+                    <p class="card-text font-weight-light">Nansha College Preparatory Academy (Class of 2016)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Card 3-->
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3" style="">
+            <div class="card hoverable">
+              <div class="row no-gutters">
+                <div class="col-sm-5">
+                  <img src="assets/photos/students/former/Lucy%20Xiao.webp" class="card-img-top card-img-left" alt="Lucy Xiao">
+                </div>
+                <div class="col-sm-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Lucy Xiao</h5>
+                    <p class="card-text font-weight-bolder text-uppercase">Secretary General of SCMUN IV
+                    </p>
+                    <hr class="my-xl-4 my-lg-2">
+                    <p class="card-text font-weight-light">Nansha College Preparatory Academy (Class of 2016)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Card 4-->
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3" style="">
+            <div class="card hoverable">
+              <div class="row no-gutters">
+                <div class="col-sm-5">
+                  <img src="assets/photos/students/former/Zero%20Lin.webp" class="card-img-top card-img-left" alt="Lucy Xiao">
+                </div>
+                <div class="col-sm-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Zero Lin</h5>
+                    <p class="card-text font-weight-bolder text-uppercase mb-0">NCPA MUN President
+                    </p>
+                    <p class="card-text font-weight-bolder text-uppercase">SCMUN V Manager
+                    </p>
+                    <hr class="my-xl-4 my-lg-2">
+                    <p class="card-text font-weight-light">Nansha College Preparatory Academy (Class of 2017)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Card 5-->
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3" style="">
+            <div class="card hoverable">
+              <div class="row no-gutters">
+                <div class="col-sm-5">
+                  <img src="assets/photos/students/former/Shinzo%20Chen.webp" class="card-img-top card-img-left" alt="Shinzo Chen">
+                </div>
+                <div class="col-sm-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Shinzo Chen</h5>
+                    <p class="card-text font-weight-bolder text-uppercase">Secretary General of SCMUN V
+                    </p>
+                    <hr class="my-xl-4 my-lg-2">
+                    <p class="card-text font-weight-light">Nansha College Preparatory Academy (Class of 2017)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Card 6-->
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3" style="">
+            <div class="card hoverable">
+              <div class="row no-gutters">
+                <div class="col-sm-5">
+                  <img src="assets/photos/students/former/Jarvis%20Zhang.webp" class="card-img-top card-img-left" alt="Olivia Lin">
+                </div>
+                <div class="col-sm-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Jarvis Zhang</h5>
+                    <p class="card-text font-weight-bolder text-uppercase">Secretary General of SCMUN VI</p>
+                    <hr class="my-xl-4 my-lg-2">
+                    <p class="card-text font-weight-light">Nansha College Preparatory Academy (Class of 2018)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Card 7-->
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3" style="">
+            <div class="card hoverable">
+              <div class="row no-gutters">
+                <div class="col-sm-5">
+                  <img src="assets/photos/students/former/Louis-Liu-Zhuo-Yi.jpg" class="card-img-top card-img-left" alt="Louis Liu Zhuo Yi">
+                </div>
+                <div class="col-sm-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Louis Liu Zhuo Yi</h5>
+                    <p class="card-text font-weight-bolder text-uppercase">Secretary General of SCMUN VII</p>
+                    <hr class="my-xl-4 my-lg-2">
+                    <p class="card-text font-weight-light">Nansha College Preparatory Academy (Class of 2019)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!--SCMUN I-->
+  <div class="container-fluid mt-2 mt-lg-3 mt-xl-4 white">
+    <div class="container pt-3">
+      <section class="section pt-2 pb-5">
+
+        <!--Heading-->
+
+        <h1 class="h1-responsive text-left mt-5 font-weight-bolder wow fadeInDown">SCMUN I</h1>
+
+        <!--Content-->
+        <div class="row">
+          <div class="col-12 col-lg-6 col-xl-5">
+            <h3 class="h3-responsive text-justify font-weight-bold wow fadeInDown">SCMUN I Conference Record</h3>
+
+            <p class="wow fadeIn text-justify" data-wow-delay="0.4s">In March 2013, Nansha College Preparatory Academy hosted the first South China Model United Nations (SCMUN), established by Irwin Stein, the former director of the school. The conference was facilitated under The Hague's MUN (THIMUN) rules and principles with all students in participation. Together with several students in U-Link, the first conference was held successfully. Meanwhile, all teachers were involved in the approval panel to assist the conference. The first conference went smoothly.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-6 offset-xl-1">
+            <div class="embed-responsive embed-responsive-16by9 grey lighten2 wow fadeInRight">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NxmMKMb_vBs" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+  <!--SCMUN II-->
+  <div class="container-fluid mt-2 mt-lg-3 mt-xl-4 grey lighten-3">
+    <div class="container pt-3">
+      <section class="section pt-2 pb-5">
+
+        <!--Heading-->
+
+        <h1 class="h1-responsive text-left mt-5 font-weight-bolder wow fadeInDown">SCMUN II</h1>
+
+        <!--Content-->
+        <div class="row">
+          <div class="col-12 col-lg-6 col-xl-5">
+            <h3 class="h3-responsive text-justify font-weight-bold wow fadeInDown">SCMUN II Conference Record</h3>
+            <p class="wow fadeIn text-justify" data-wow-delay="0.4s">In March 2014, Nansha College Preparatory Academy hosted the second South China Model United Nations (SCMUN) by the director of SCMUN, Sarah Boulware and Secretary General Serena Yang.  Also, we invited Irwin Stein, the founding member of TAIMUN as well as SCMUN, to be our SCMUN II Keynote Speaker.  This short video has included the opening/closing ceremony, opening speech, lobbying time, debate, and voting procedure of the conference.  In here, you can see the vigour of our delegates, the environment of our conference location and the growth of SCMUN.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-6 offset-xl-1">
+            <div class="embed-responsive embed-responsive-16by9 grey lighten2 wow fadeInRight">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_MvfEtm28ms" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-12 col-lg-6 col-xl-5">
+            <h3 class="h3-responsive text-justify font-weight-bold wow fadeInDown">SCMUN II Officer Welcomes Video</h3>
+            <p class="wow fadeIn text-justify" data-wow-delay="0.4s">A video made by the Officer Team which led by Secretary General Serena Yang, Deputy Secretary General Max Huang and 24 chairs from 12 different committees was played in the open ceremony of SCMUN II. Their welcoming speeches encouraged the fellow delegates to cherish such a precious opportunity for learning, for growing, for succeeding.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-6 offset-xl-1">
+            <div class="embed-responsive embed-responsive-16by9 grey lighten2 wow fadeInRight">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BXpUVdlN5jw" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+  <!--SCMUN III-->
+  <div class="container-fluid mt-2 mt-lg-3 mt-xl-4 white">
+    <div class="container pt-3">
+      <section class="section pt-2 pb-5">
+
+        <!--Heading-->
+
+        <h1 class="h1-responsive text-left mt-5 font-weight-bolder wow fadeInDown">SCMUN III</h1>
+
+        <!--Content-->
+        <div class="row">
+          <div class="col-12 col-lg-6 col-xl-5">
+            <h3 class="h3-responsive text-justify font-weight-bold wow fadeInDown">SCMUN III Officer Welcomes Video</h3>
+            <p class="wow fadeIn text-justify" data-wow-delay="0.4s">
+              In March 2015, Nansha College Preparatory Academy hosted the third South China Model United Nations (SCMUN) by the director of SCMUN, Sarah Boulware and Secretary General Serena Yang.
+            </p>
+            <p class="wow fadeIn text-justify" data-wow-delay="0.4s">
+              This is a welcoming video shot, with the purpose of welcoming every delegates to the conference, and helping them fully participate with delicacy. In this video, all Chairs and Managers have been organised into a funny skit to comprehensively and throughly analyse each of their topics.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-6 offset-xl-1">
+            <div class="embed-responsive embed-responsive-16by9 grey lighten2 wow fadeInRight">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SYog9--YudE" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+  <!--Former website-->
+  <div class="container-fluid mt-2 mt-lg-3 mt-xl-4 grey lighten-3">
+    <div class="container pt-3">
+      <section class="section pt-2 pb-5">
+
+        <!--Heading-->
+
+        <h1 class="h1-responsive text-left mt-5 font-weight-bolder wow fadeInDown">Former Websites</h1>
+
+        <!--Content-->
+        <p class="wow fadeIn text-justify" data-wow-delay="0.4s">To learn more about the history of SCMUN, you can use the buttons below to access former SCMUN websites.
+        </p>
+        <div class="text-center mb-5">
+          <a href="http://scmun.net/2018/index.html" class="font-weight-bold btn btn-outline-primary waves-effect wow fadeInDown mx-xl-3" data-wow-delay="0.4s">SCMUN VII Website</a>
+          <a href="https://scmunofficial.wixsite.com/scmunvi/conference-information" class="font-weight-bold btn btn-outline-primary wow waves-effect fadeInDown mx-xl-3" data-wow-delay="0.6s">Archived Website</a>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+
+</main>
+
+<!--Modal: Login / Register Form Demo-->
+<div class="modal fade" id="navbarLogin" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header text-centre">
+        <h4 class="modal-title w-100 font-weight-bold text-center">SCMUN VIII Internal Portal</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <p class="py-2">If you are part of the SCMUN management team, you can access the internal portal by typing in your access code.</p>
+
+        <div class="md-form mb-4">
+          <label for="internalPortalInput">Access code</label>
+          <input type="password" id="internalPortalInput" class="form-control" required>
+          <div class="invalid-feedback">
+            Please enter a valid access code.
+          </div>
+          <div class="valid-feedback ">
+            Welcome back!
+          </div>
+
+          <button id="internalPortalButton" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Go</button>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- Modal content -->
+  </div>
+</div>
+<!--Modal: Login / Register Form Demo-->
+
+<!-------------------------->
+<!----------Footer---------->
+<!-------------------------->
+<footer class="page-footer font-small unique-color-dark">
+  <!--Footer top-->
+  <div class="light-blue darken-3">
+    <div class="container">
+
+      <div class="row pb-4 pt-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-8">
+          <h6 class="mb-0">SCMUN on social networks:</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-4">
+          <h6 class="text-right mb-0">
+            <!-- Facebook -->
+            <a class="fb-ic" href="https://www.facebook.com/ncpascmun/">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic" href="https://www.instagram.com/ncpascmun/">
+              <i class="fab fa-instagram white-text mr-2"> </i>
+            </a>
+          </h6>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!--Footer bottom-->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!--Grid column 1-->
+      <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mb-4">
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">About Us</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <div class="mx-auto" style="max-width: 400px;">
+          <a href="http://scmun.net/">
+            <img src="assets/icons/scmunlogotext.svg" alt="SCMUN logo with text">
+          </a>
+        </div>
+        <h6 class="text-uppercase font-weight-bolder mb-3 mt-3">Hosted By
+          <a href="https://www.ncpachina.org/en/">
+            Nansha College Preparatory Academy
+          </a>
+        </h6>
+        <div class="mx-auto" style="max-width: 400px;">
+<!--          <a href="https://www.ncpachina.org/en/">-->
+<!--            <img src="assets/icons/ncpalogohdwhite.svg" alt="NCPA logo">-->
+<!--          </a>-->
+        </div>
+      </div>
+
+      <!--Grid column 2-->
+      <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4 smooth-scroll">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Conference</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="http://scmun.net/#home" class="font-weight-bold">Home</a>
+        </p>
+        <p>
+          <a href="http://scmun.net/#about">About</a>
+        </p>
+        <p>
+          <a href="registration.html">Register</a>
+        </p>
+        <p>
+          <a href="logisticArrangements.html">Logistic Arrangements</a>
+        </p>
+        <p>
+          <a href="schedule.html">Schedule</a>
+        </p>
+        <p>
+          <a href="venue.html">Venue</a>
+        </p>
+      </div>
+
+      <!--Grid column 3-->
+      <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Committees</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p class="">
+          <a href="UNSC.html">UNSC</a>
+        </p>
+        <p>
+          <a href="DISEC.html">DISEC</a>
+        </p>
+        <p>
+          <a href="WHO.html">WHO</a>
+        </p>
+        <p>
+          <a href="ECOSOC.html">ECOSOC</a>
+        </p>
+        <p>
+          <a href="SOCHUM.html">SOCHUM</a>
+        </p>
+        <p>
+          <a href="UNICEF.html">UNICEF</a>
+        </p>
+      </div>
+
+      <!--Grid column 4-->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="info-color-dark accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i>180 Gang Qian Boulevard, Nansha, Guangzhou, Guangdong, China 511458
+        </p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i>scmun@ncpachina.org
+        </p>
+
+        <p>
+          <a href="https://github.com/leonluleonlu/SCMUN2019">
+            <i class="fab fa-github mr-3"></i><u>SCMUN2019</u>
+          </a>
+        </p>
+        <p>
+          <a href="managers.html">
+            <i class="fas fa-user-tie mr-3"></i><u>Managers</u>
+          </a>
+        </p>
+        <p>
+          <a href="officers.html">
+            <i class="fal fa-user mr-3"></i><u>Officers</u>
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <!--/Footer Links -->
+
+  <!--Copyright -->
+  <div class="footer-copyright text-center py-3">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 text-md-left">
+          © 2019 Copyright:
+          <a href="http://scmun.net"> SCMUN</a>
+        </div>
+
+        <div class="col-12 col-md-6 text-md-right">
+          Website designed, built, and maintained by Leon Lu
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!--Copyright -->
+
+</footer>
+
+<!------------------------->
+<!---------Scripts--------->
+<!------------------------->
+<div>
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Animation script -->
+  <script>
+      new WOW().init();
+  </script>
+  <!-- Lazy loading -->
+  <script>
+      window.addEventListener('load', function(){
+          var allimages= document.getElementsByTagName('img');
+          for (var i=0; i<allimages.length; i++) {
+              if (allimages[i].getAttribute('data-src')) {
+                  allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+              }
+          }
+      }, false)
+  </script>
+
+  <!-- Main -->
+  <script type="text/javascript" src="main.js"></script>
+</div>
+</body>
+
+</html>

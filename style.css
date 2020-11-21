@@ -1,0 +1,22 @@
+.md-form .form-control.is-invalid {
+    border-color: #f44336 !important;
+    box-shadow: 0 1px 0 0 #f44336!important;
+}
+
+.md-form .form-control.is-valid {
+    border-color: #28a745 !important;
+    box-shadow: 0 1px 0 0 #28a745!important;
+}
+
+.betaContent {
+    display: none !important;
+}
+
+.hideContent {
+    display: none !important;
+}
+
+.betaHeading {
+    padding-top: 5px;
+    padding-bottom: 15px;
+}

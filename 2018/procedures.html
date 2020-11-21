@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SCMUN</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		.subPoint {
+			text-align: left;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="topBar" id="backOfTopBar"></div>
+	<div class="topBar">
+		<img class="logo" onclick="window.location = '/'" style="cursor: pointer;" src="logo.png">
+		<span id="scmun" onclick="window.location = '/'" style="cursor: pointer;">SCMUN VII</span>
+		<br>
+		<span id="hostedby" onclick="window.location = '/'" style="cursor: pointer;">Hosted by Nansha College Preparatory Academy</span>
+		<div class="burgerBars">
+			<div class="burgerBar1"></div>
+			<div class="burgerBar2"></div>
+			<div class="burgerBar3"></div>
+		</div>
+
+		<!-- PDF Icon for Documented Rules -->
+			<img id="pdfICON" class="restOfThePage" src="pdfIcon.png" onclick="window.location = '/rules.pdf'" style="cursor: pointer; width: 5rem; float: right; margin-top: 3.5%; margin-right: 1.1%;">
+	</div>
+
+	<div class="burgerSlideoutPanel">
+		<p class="burgerItems" onclick="window.location = '/'" style="cursor: pointer;">CONFERENCE</p>
+		<p class="burgerSubItems" onclick="window.location = 'MUN_Directors_Message.html'" style="cursor: pointer;">MUN Director's Message<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'Schedule.html'" style="cursor: pointer;">Schedule<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'comntops.html'" style="cursor: pointer;">Committees & Topics<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'Room_Assignments.html'" style="cursor: pointer;">Room Assignments<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'procedures.html'" style="cursor: pointer;">Procedures & Rules<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'awards.html'" style="cursor: pointer;">Awards Available<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerItems">MANAGEMENT TEAM</p>
+		<p class="burgerSubItems" onclick="window.location = 'managers.html'" style="cursor: pointer;">Managers<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'officers.html'" style="cursor: pointer;">Officers<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerItems">CONTACT US</p>
+		<p class="burgerSubItems" onclick="window.location = 'contactinfo.html'" style="cursor: pointer;">Contact Information<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'directions.html'" style="cursor: pointer;">Directions<span class="burgerSubItemArrow">></span></p>
+		<p class="burgerSubItems" onclick="window.location = 'scmunmuseum.html'" style="cursor: pointer;">SCMUN Museum<span class="burgerSubItemArrow">></span></p>
+	</div>
+
+	<div class="restOfThePage">
+
+		<div class="pg3 leaveNavbarMarginToStartPage" style="height: 127vh;">
+			<p class="bigCenteredTitle smallMarginTop">New Guidelines for Delegates</p>
+			<img src="Pakistan_Plate.jpg" style="width: 90%; margin: 2% 5%;">
+			<div style="font-size: 1.3rem;">
+				<p class="mainPoint" style="margin: 0 7%; width: 86%; text-align: left;">This is the New Guidelines For Delegates, which contains basic information and regulations for SCMUN VII. The New Guidelines For Delegates will inform the required preparation before the conference and the permissive behaviors during the conference for delegates. </p>
+				<p class="mainPoint" style="margin: 2% 7%; width: 86%; text-align: left;">To be more specific, The New Guidelines For Delegates will guide you, including but not limited to:  </p>
+				<div style="margin: 0 10%; width: 80%;">
+					<p class="subPoint">i) What Are the Different Positions At SCMUN</p>
+					<p class="subPoint">ii) How To Research A Country, An Issue</p>
+					<p class="subPoint">iii) How To Write A Policy Statement </p>
+					<p class="subPoint">iv) How To Write A Draft Resolution </p>
+					<p class="subPoint">v) How To Write An Opening Speech </p>
+					<p class="subPoint">vi) How To Prepare Official Notepaper </p>
+					<p class="subPoint">vii) What Is Lobbying</p>
+					<p class="subPoint">viii) What Happen During Debate Time </p>
+				</div>
+			</div>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+ 
+		</div>
+
+	</div>
+
+</body>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+		startAnimation()
+		// On Scroll, PDF Icon to lower opacity
+			$(document).ready(function(){
+				$(window).scroll(function () { 
+					$('#pdfICON').animate({'opacity': '0.38'}, {duration: 200, queue: false});
+				});
+			});
+			// Mouse hover animation (increase opacity)
+			$('#pdfICON').mouseover(function() {
+				$('#pdfICON').animate({'opacity': '1'}, {duration: 200, queue: false});
+			}).mouseout(function() {
+				$('#pdfICON').animate({'opacity': '0.38'}, {duration: 200, queue: false});
+			})
+	</script>
+</html>
