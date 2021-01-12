@@ -328,27 +328,27 @@ $("#animationTrigger").click(function () {
 
 
 //!!!!
-const max = 636; //NO of the last photo
+const max = 2055; //NO of the last photo
 // const groupMax = 9; //Amount to add each group [legacy]
 var filterName = "all"; //Default filter
 
-const UNSCStart = 1;
-const UNSCEnd = 10; //NO of last UNSC photo
+const UNSCStart = 0;
+const UNSCEnd = 0; //NO of last UNSC photo
 
 const DISECStart = UNSCEnd + 1;
-const DISECEnd = 20; //NO of last DISEC photo
+const DISECEnd = 0; //NO of last DISEC photo
 
 const WHOStart = DISECEnd + 1;
-const WHOEnd = 30; //NO of last WHO photo
+const WHOEnd = 0; //NO of last WHO photo
 
 const ECOSOCStart = WHOEnd + 1;
-const ECOSOCEnd = 40; //NO of last ECOSOC photo
+const ECOSOCEnd = 0; //NO of last ECOSOC photo
 
 const SOCHUMStart = ECOSOCEnd + 1;
-const SOCHUMEnd = 50; //NO of last SOCHUM photo
+const SOCHUMEnd = 0; //NO of last SOCHUM photo
 
 const UNICEFStart = SOCHUMEnd + 1;
-const UNICEFEnd = 60; //NO of last UNICEF photo
+const UNICEFEnd = 0; //NO of last UNICEF photo
 //!!!!
 
 //Load all
@@ -418,7 +418,7 @@ function addPhoto(i) {
     $("#largeGallery").append(
         "    <div class=\"col-md-4 pics animation all " + filterName + "\">\n" +
         "        <figure class=\"\">\n" +
-        "          <a href=\"gallery/full/" + imageSerial + ".jpg\" data-size=\"2400x1600\">\n" +
+        "          <a href=\"gallery/full/" + imageSerial + ".jpg\" data-size=\"3000x2000\">\n" +
         "            <img src=\"gallery/thumbnails/" + imageSerial + ".jpg\" class=\"img-fluid\">\n" +
         "          </a>\n" +
         "        </figure>" +
